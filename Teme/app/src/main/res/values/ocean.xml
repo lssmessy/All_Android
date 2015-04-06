@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="ps_color">#006699</color>
+    <style name="ps_theme" parent="android:Theme.Light">
+        <item name="android:windowBackground">@color/ps_color</item>
+    </style>
+    <style name="babyRed">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">#990000</item>
+
+    </style>
+</resources>

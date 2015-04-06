@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">T_me</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="time_button">Click for time</string>
+</resources>

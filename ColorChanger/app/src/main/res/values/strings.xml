@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">ColorChanger</string>
+
+    <string name="hello_world">Hello world!</string>
+
+    <string name="red_menu">Red</string>
+    <string name="green_menu">Green</string>
+    <string name="yellow_menu">Yellow</string>
+</resources>
