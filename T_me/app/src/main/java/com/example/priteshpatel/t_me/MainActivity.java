@@ -1,40 +1,47 @@
 package com.example.priteshpatel.t_me;
 
-import android.support.v7.app.ActionBarActivity;
+import android.app.Activity;
 import android.os.Bundle;
+import android.support.v4.widget.DrawerLayout;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.TextView;
-import android.os.IBinder;
-import android.content.Context;
-import android.content.Intent;
-import android.content.ComponentName;
-import android.content.ServiceConnection;
-import com.example.priteshpatel.t_me.MyService.MyLocalBinder;
-
-import org.w3c.dom.Text;
+import android.widget.ArrayAdapter;
+import android.widget.FrameLayout;
+import android.widget.ListView;
 
 
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends Activity {
 
-        MyService myservice;
-        boolean isBound=false;
+    private String items[];
+    private DrawerLayout dl;
+    private ListView listView;
+    private FrameLayout fm;
+      /*  MyService myservice;
+        boolean isBound=false;*/
 
-    public void showTime(View view){
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        dl=(DrawerLayout)findViewById(R.id.drawerOnleft);
+        items=getResources().getStringArray(R.array.list_items);
+        listView=(ListView)findViewById(R.id.left_list);
+
+        //Set adapter for this list
+        listView.setAdapter(new ArrayAdapter<>(this,android.R.layout.simple_list_item_1,items));
+        setContentView(R.layout.activity_main);
+
+
+
+
+    }
+   /* public void showTime(View view){
         String time=myservice.getCurrentTime();
         TextView tv=(TextView)findViewById(R.id.time_text);
         tv.setText(time);
     }
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        Intent i=new Intent(this,MyService.class);
-        bindService(i,sc,Context.BIND_AUTO_CREATE);
-    }
-
-
+*/
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -57,7 +64,7 @@ public class MainActivity extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    private ServiceConnection sc=new ServiceConnection() {
+    /*private ServiceConnection sc=new ServiceConnection() {
         @Override
         public void onServiceConnected(ComponentName name, IBinder service) {
             MyLocalBinder localBind=(MyLocalBinder)service;
@@ -71,5 +78,5 @@ public class MainActivity extends ActionBarActivity {
             isBound=false;
 
         }
-    };
+    };*/
 }
